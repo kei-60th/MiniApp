@@ -7,8 +7,7 @@
           %span.card-title 
             = post.title
           %p
-            I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
+            = post.user.name
         .card-action
           = link_to "編集", "/posts/#{post.id}/edit",method:"GET"
           = link_to "削除", "/posts/#{post.id}",method:"DELETE"
