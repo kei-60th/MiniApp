@@ -1,0 +1,19 @@
+- posts.each do |post|
+  .row
+    .col.s12.m6
+      .card.blue-grey.darken-1
+        .card-content.white-text
+          %span.card-title 
+            = post.title
+          %p
+            = post.user.name
+          %p
+            = post.text
+        .card-action
+          -if current_user
+            -if post.user.id == current_user.id
+              = link_to "編集", "/posts/#{post.id}/edit",method:"GET"
+              = link_to "削除", "/posts/#{post.id}",method:"DELETE"
+
+
+
